@@ -52,7 +52,7 @@ $('form').onsubmit=async event=>{
   event.preventDefault();if(busy)return;
   sampleRequest++;$('error').hidden=true;$('result').hidden=true;setBusy(true);
   try {
-    const response=await fetch(apiBase + '/api/analyze',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:$('url').value.trim()}),signal:AbortSignal.timeout(30000)});
+    const response=await fetch(apiBase + '/api/analyze',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:$('url').value.trim()}),signal:AbortSignal.timeout(90000)});
     if(!(response.headers.get('content-type')||'').includes('application/json'))throw new Error('지금은 검사를 진행할 수 없어요. 잠시 후 다시 시도해 주세요.');
     const data=await response.json();
     if(!response.ok)throw new Error(response.status===422?'올바른 http 또는 https 웹 주소를 입력해 주세요.':'검사를 완료하지 못했어요. 잠시 후 다시 시도해 주세요.');
