@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+ai/model/
+ai/learning_features.xlsx
+ai/test_results_detailed.xlsx
+_site/
+node_modules/
+*.log

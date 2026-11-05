@@ -1,0 +1,1 @@
+{"name":"url-guard-pages-python","private":true,"type":"module","scripts":{"build:pages":"node scripts/build-pages.mjs"}}
